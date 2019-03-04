@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>idaproject</title>
+    <!-- Main js в head чтоб стили подключались сразу -->
+    <script src="dist/main.js"></script>
+    <!-- Main CSS -->
+    <link href="dist/style.css">
+    <!-- Flexibility polyfill -->
+    <script src="./flexibility.js"></script>
+    <!-- Для проверки совместимости flexbox в браузерах -->
+    <script src="./modernizr-custom.js"></script>
+</head>
+<body>
+    <section class="office">
+		<div class="container">
+            <!-- desctop menu -->
+			<menu class="navigation">
+				<li class="navigation__point navigation__point_color-light">
+					<a href="#">Личный кабинет</a>
+				</li>
+				<li class="navigation__point navigation__point_color-active">
+					<a href="#">Платежи</a>
+				</li>
+				<li class="navigation__point navigation__point_color-light">
+					<a href="#">История платежей</a>
+				</li>
+				<li class="navigation__point">
+					<a href="#">Настройки</a>
+				</li>
+				<li class="navigation__point">
+					<a href="#">Выйти</a>
+				</li>
+            </menu>
+            <!-- mobile-tablet menu --->
+            <div class="tablet-mobile">
+                <div class="icon-menu"></div>
+                <div class="icon-menu"></div>
+                <div class="icon-menu"></div>
+            </div>
+			<main class="content">
+				<!-- main content -->
+				<div class="payments">
+					<div class="payments__info">
+						<div class="report">
+							<p class="report__title">
+								Информация по оплате:
+							</p>
+							<div class="report__data">
+								<div class="report__bill">
+									<p class="report__text">Номер счета:</p>
+									<p class="report__number">87123658716587</p>
+								</div>
+								<div class="report__bill">
+									<p class="report__text">Сумма платежа:</p>
+									<p class="report__number">100 руб.</p>
+								</div>
+							</div>
+						</div>
+						<form class="card">
+							<h1 class="card__title">Данные банковской карты</h1>
+							<div class="card__picture">
+								<div class="bank bank-left">
+                                    <div class="bank-left__number">
+                                        <p class="bank-left__text">Номер карты</p>
+                                        <div class="bank-left__field">
+                                            <input class="bank-left__input" type="text" name="first-four-number" maxlength="4" required>
+                                            <input class="bank-left__input" type="text" name="second-four-number" maxlength="4" required>
+                                            <input class="bank-left__input" type="text" name="third-four-number" maxlength="4" required>
+                                            <input class="bank-left__input" type="text" name="fourth-four-number" maxlength="4" required>
+                                        </div>
+                                    </div>
+                                    <div class="bank-left__time">
+                                        <p class="bank-left__text">Срок действия</p>
+                                        <div class="bank-left__data">
+                                            <select class="bank-left__month" name="card-month" required>
+                                                <option value="январь">01</option>
+                                                <option value="февраль">02</option>
+                                                <option value="март">03</option>
+                                                <option selected value="апрель">04</option>
+                                                <option value="май">05</option>
+                                                <option value="июнь">06</option>
+                                                <option value="июль">07</option>
+                                                <option value="август">08</option>
+                                                <option value="сентябрь">09</option>
+                                                <option value="октябрь">10</option>
+                                                <option value="ноябрь">11</option>
+                                                <option value="декабрь">12</option>
+                                            </select>
+                                            <select class="bank-left__year" name="card-year" required>
+                                                    <option selected value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="bank-left__user">
+                                        <input type="text" name="user-name" class="bank-left__name" placeholder="Держатель карты" required>
+                                    </div>
+                                </div>
+								<div class="bank bank-right">
+                                    <div class="bank-right__decoration"></div>
+                                    <div class="bank-right__cvv">
+                                        <p class="bank-right__text">Код <span class="text-uppercase">cvv2 / cvc2</span></p>
+                                        <input class="bank-right__code" name="cvv-cvc-code" type="text" maxlength="3" required>
+                                    </div>
+                                </div>
+							</div>
+                            <button class="card__button" type="submit">
+                                Оплатить
+                            </button>
+						</form>
+					</div>
+					<div class="payments__addition">
+						<p class="add-text">Исходя из&nbsp;астатической системы координат Булгакова, соединение стабильно. Краевая часть артезианского бассейна, которая в&nbsp;настоящее время находится ниже уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.</p>
+						<p class="add-text">Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.</p>
+						<p class="add-text">Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.</p>
+						<p class="add-text">Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то&nbsp;видно, что угол крена покрывает вибрирующий волчок, что обусловлено не&nbsp;только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород, но&nbsp;и&nbsp;проявлениями долее поздней блоковой тектоники. Засветка неба заставляет иначе взглянуть на&nbsp;то, что такое волчок.</p>
+					</div>
+				</div>
+			</main>
+		</div>
+    </section>
+    <script>
+        if (Modernizr.flexbox && Modernizr.flexwrap) {
+    
+        } else {
+            flexibility(document.documentElement);
+        }
+    </script>
+</body>
+</html>

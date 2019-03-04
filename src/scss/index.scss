@@ -1,0 +1,405 @@
+/* ---- Specification ---- */
+
+/* -- mixin -- */
+@mixin font-title {
+	font-family: 'Open Sans';
+	font-weight: 700;
+}
+@mixin field-input {
+    height: 40px;
+    border: 1px solid #e4e9ee;
+    font-size: 16px;
+    color: #373c43;
+    text-align: center;
+    text-align-last: center;
+}
+@mixin flex {
+    -js-display: flex;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
+}
+/* - */
+
+body {
+	padding: 0px;
+	margin: 0px;
+	letter-spacing: 0;
+	line-height: 1.3
+}
+ul, li, a, span, menu {
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+div, p, span, a, button, form, input, li {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+p {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+h1 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 22px;
+	color: #383d43;
+	@include font-title;
+}
+input, input:hover, input:focus, input:active,
+button, button:hover, button:focus, button:active,
+select, select:hover, select:focus, select:active
+
+ {
+	outline: none;
+}
+
+$input-active: 1px solid #373c43;
+
+/* -- error class -- */
+.valid-error {
+    border: 1px solid red !important;
+}
+
+/* ---- Office content ---- */
+
+body {
+	.office {
+        background-color: #101114;
+        @include flex;
+        justify-content: center;
+        height: 100vh;
+		.container {
+        @include flex;
+		padding-top: 80px;
+			.navigation {
+				:last-child {
+					border-bottom: none;
+				}
+				:hover {
+					background-color: #22262d;
+					transition: all ease 0.5s;
+				}
+				&__point {
+					@include font-title;
+					font-size: 18px;
+					width: 320px;
+					height: 75px;
+                    background-color: #191c24;
+                    @include flex;
+				    align-items: center;
+				    padding-left: 30px;
+				    border-bottom: 1px solid #20232b;
+				    cursor: pointer;
+					a {
+						color: #fff;
+					}
+					&_color {
+						&-active {
+							background-color: #2a2d37;
+						}
+						&-light {
+							background-color: #1f2229;
+						}
+					}
+				}
+            }
+            .tablet-mobile {
+                display: none !important;
+                position: absolute;
+                .icon-menu {
+                    width: 30px;
+                    height: 2px;
+                    background-color: #191c24;
+                    margin-top: 6px;
+                }
+            }
+			.content {
+				width: 640px;
+				min-height: 835px;
+				.payments {
+					font-family: Arial, sans-serif;
+					color: #8494ab;
+					&__info {
+						background-color: #f7f8f8;
+						font-size: 16px;
+						padding: 42px 48px 48px 30px;
+						.report {
+							&__title {
+								margin-bottom: 19px;
+							}
+							&__data {
+                                width: 290px;
+							}
+							&__bill {
+                                @include flex;
+								margin-bottom: 7px;
+							}
+							&__text {
+								width: 125px;
+								margin-right: 35px;
+							}
+							&__number {
+								color: #373c43;
+							}
+						}
+						.card {
+                            margin-top: 28px;
+							&__picture {
+                                @include flex;
+                                position: relative;
+                                margin-top: 22px;
+								.bank {
+                                    width: 350px;
+									min-width: 350px;
+									height: 236px;
+									border: 1px solid #e4e9ee;
+									border-radius: 10px;
+									background-color: #f7f8f8;
+									&-left {
+                                        z-index: 1;
+                                        padding: 20px 15px 15px;
+                                        &__field {
+                                            @include flex;
+                                            justify-content: space-between;
+                                            margin: 5px 32px 0 0;
+                                        }
+                                        &__input {
+                                            width: 65px;
+                                            @include field-input;
+                                        }
+                                        &__time {
+                                            margin-top: 14px
+                                        }
+                                        &__data {
+                                            margin-top: 4px;
+                                        }
+                                        &__month {
+                                            width: 70px;
+                                            @include field-input;
+                                            margin-right: 4px;
+                                        }
+                                        &__year {
+                                            width: 86px;
+                                            @include field-input;
+                                        }
+                                        &__user {
+                                            margin-top: 16px;
+                                        }
+                                        &__name {
+                                            width: 320px;
+                                            @include field-input;
+                                            text-align: left;
+                                            text-align-last: left;
+                                            padding-left: 10px;
+                                        }
+									}
+									&-right {
+										position: absolute;
+										top: 20px !important;
+                                        left: 213px !important;
+                                        &__decoration {
+                                            background: #e4e9ee;
+                                            width: 100%;
+                                            height: 42px;
+                                            margin-top: 25px;
+                                        }
+                                        &__cvv {
+                                            margin: 15px;
+                                            text-align: right;
+                                            &::after {
+                                                content: '?';
+                                                color: #bec6cf;
+                                                border: 1px solid #bec6cf;
+                                                border-radius: 50%;
+                                                @include flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                width: 25px;
+                                                height: 25px;
+                                                position: absolute;
+                                                top: 115px;
+                                                right: 22px;
+                                                cursor: pointer;
+                                            }
+                                        }
+                                        &__text {
+                                            .text-uppercase {
+                                                display: inline;
+                                                text-transform: uppercase;
+                                            }
+                                        }
+                                        &__code {
+                                            margin-top: 5px;
+                                            @include field-input;
+                                            width: 138px;
+                                        }
+                                    }
+								}
+                            }
+                            &__button {
+                                width: 132px;
+                                height: 40px;
+                                background-color: #0058ba;
+                                margin-top: 40px;
+                                border-radius: 20px;
+                                border: none;
+                                color: #fff;
+                                font-size: 14px;
+                                @include font-title;
+                                margin-left: 15px;
+                                cursor: pointer;
+                                transition: all ease 0.5s;
+                                &:hover {
+                                    background-color: #0c79f3;
+                                }
+                            }
+						}
+					}
+					&__addition {
+						background-color: #373c43;
+						font-size: 12px;
+						line-height: 1.5;
+						padding: 20px 40px 30px 30px;
+						color: #7f8591;
+						.add-text {
+							margin-bottom: 11px;
+						}
+						:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+            }
+		}
+	}
+}
+/* ---- для говнюка ie9 ---- */
+.no-flexbox {
+    .content .payments__info .card__picture {
+        width: 565px;
+        .bank-right__cvv::after {
+            display: none !important;
+        }
+    }
+}
+@media all and (max-width: 1000px) {
+    body .office .container .tablet-mobile {
+        margin: 0 !important;
+    }
+}
+
+/* ---- Media Queries ---- */
+
+/* 720-1000px */
+@media all and (max-width: 1000px) {
+    body .office .container {
+        display: block ;
+        position: relative;
+        width: 640px;
+        .navigation {
+            display: none;
+        }
+        .menu-open {
+            display: block;
+            position: absolute;
+            right: 87px;
+            z-index: 2;
+            top: 127px;
+        }
+        .tablet-mobile {
+            cursor: pointer;
+            display: block !important;
+            top: 94px;
+            right: 50px;
+        }
+    }
+}
+
+/* 455-720px */
+@media screen and (max-width: 720px) {
+    body .office {
+        height: auto;
+        .container {
+            padding: 40px 0;
+            width: 90%;
+            .menu-open {
+                right: 65px;
+                top: 98px;
+            }
+            .tablet-mobile {
+                top: 63px;
+                right: 32px;
+            }
+            .content {
+                width: 100%;
+                .payments__info .card__picture {
+                    flex-direction: column;
+                    .bank {
+                        width: 350px;
+                        &-right {
+                            position: static;
+                            margin-top: 20px;
+                            &__cvv::after {
+                                top: 372px;
+                                left: 300px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 320-455px */
+@media screen and (max-width: 455px) {
+    body .office .container {
+        width: 95%;
+        .navigation__point {
+            width: 280px;
+        }
+        .menu-open {
+            right: 23px;
+        }
+        .tablet-mobile {
+            top: 62px;
+        }
+        .content .payments__info {
+            padding-top: 70px;
+            .report__data {
+                width: 222px;
+            }
+            .card__picture {
+                .bank {
+                    min-width: 0;
+                    width: 105%;
+                    &-left {
+                        &__input {
+                            width: 23%;
+                        }
+                        &__field {
+                            margin-right: unset;
+                        }
+                        &__name {
+                            width: 100%;
+                        }
+                    }
+                    &-right {
+                        &__cvv::after {
+                            right: 12px;
+                            left: auto;
+                        }
+                    }
+                }
+            } 
+        }
+    } 
+}
